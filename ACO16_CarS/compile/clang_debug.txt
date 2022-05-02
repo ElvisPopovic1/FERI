@@ -1,0 +1,10 @@
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "main.cpp" -o obj/Debug/main.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "init.cpp" -o obj/Debug/init.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "parser.cpp" -o obj/Debug/parser.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "display.cpp" -o obj/Debug/display.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "supervisor.cpp" -o obj/Debug/supervisor.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "ACO.cpp" -o obj/Debug/ACO.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "opt.cpp" -o obj/Debug/opt.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "passengers.cpp" -o obj/Debug/passengers.o
+clang++ -D ACO_VERBOSE -Wall -std=c++17 -stdlib=libc++ -g  -c "probability.cpp" -o obj/Debug/probability.o
+clang++ -fsanitize=address -fno-omit-frame-pointer -o bin/Debug/ACO16 obj/Debug/main.o obj/Debug/init.o obj/Debug/parser.o obj/Debug/ACO.o obj/Debug/opt.o obj/Debug/passengers.o obj/Debug/probability.o obj/Debug/display.o obj/Debug/supervisor.o

@@ -1,0 +1,2 @@
+#!/bin/bash
+./bin/Debug/ACO16 -d inputData/Afr11e.car -r1 0.1 -r2 0.1 -r3 0.2 -a1 1.0 -b1 2.0 -a2 1.0 -b2 1.5 -na 10 -ni 10 -a3 1.6 -b3 1.7 -npa 5 -npi 10 -sn 0 --opt --write

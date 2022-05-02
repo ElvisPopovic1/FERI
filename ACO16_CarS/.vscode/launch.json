@@ -1,0 +1,67 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "16.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "(llvm) Launch Debug Curitiba",
+            "program": "${workspaceFolder}/bin/Debug/ACO16",
+            "args": ["${workspaceFolder}/inputData/Curitiba300n.car","-r1","0.05","-r2","0.5","-a1","1.5","-b1","1.0","-a2","1.5","-b2","2.4","-na","2","-ni","2","--write"],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "llvm",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "(llvm) Launch Debug Africa opt",
+            "program": "${workspaceFolder}/bin/Debug/ACO16",
+            "args": ["${workspaceFolder}/inputData/Afr11e.car","-r1","0.05","-r2","0.5","-r3","0.6","-a1","1","-b1","1","-a2","1.02","-b2","2.4","-na","1","-ni","1","-npi,","3","-npa","1","-npt","18","--opt","--write"],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "llvm",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "(llvm) Launch Debug Africa non-opt",
+            "program": "${workspaceFolder}/bin/Debug/ACO16",
+            "args": ["${workspaceFolder}/inputData/Afr11e.car","-r1","0.05","-r2","0.5","-r3","0.6","-a1","1","-b1","1","-a2","1.02","-b2","2.4","-na","1","-ni","1","-npi,","3","-npa","1","-npt","18","--write"],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "llvm",
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "(llvm) Launch Debug att48",
+            "program": "${workspaceFolder}/bin/Debug/ACO16",
+            "args": ["${workspaceFolder}/inputData/att48nA.car","-r1","0.05","-r2","0.5","-r3","0.6","-a1","1","-b1","1","-a2","1.02","-b2","2.4","-na","1","-ni","1","-npi,","3","-npa","1","-npt","18","--opt","--write"],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "llvm",
+        },
+        {
+            "name": "(gdb) Launch Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/Debug/ACO16",
+            "args": ["${workspaceFolder}/inputData2/att48nA.car","-t","100","-r1","0.05","-r2","0.5","-r3","0.6","-a1","1","-b1","1","-a2","1.02","-b2","2.4","-na","1","-ni","1","-npi,","3","-npa","1","-npt","18","--opt","--write"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    ]
+}

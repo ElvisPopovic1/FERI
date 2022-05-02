@@ -1,0 +1,118 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "16.0",
+    "tasks": [
+        {
+            "label": "CB style debug",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/compile/compile_debug.txt"
+            ],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "CB style release",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/compile/compile_release.txt"
+            ],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Clang CB style debug",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/compile/clang_debug.txt"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Clang CB style release",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/compile/clang_release.txt"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "valgrind debug",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/valgrind/valgrind_debug_command"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "debug",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "valgrind release",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/valgrind/valgrind_release_command"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "debug",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "lldb debug",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/valgrind/lldb_debug_command"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "lldb",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "lldb release",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/valgrind/lldb_release_command"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "lldb",
+                "isDefault": false
+            }
+        }
+    ]
+
+}

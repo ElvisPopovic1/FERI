@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "cpp",
+			"iostream": "cpp",
+			"ostream": "cpp",
+			"limits": "cpp",
+			"chrono": "cpp",
+			"algorithm": "cpp",
+			"new": "cpp"
+		}
+	}
+}
