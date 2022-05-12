@@ -1,0 +1,15 @@
+### Parameter file for the ACO_CARSP software
+# switchevi moraju imati razmak na desnoj strani
+# name  switch  type  values  [conditions (using R syntax)]
+rhoNode       "-r1 "     r   (0.05,0.2)
+alphaNode     "-a1 "     r   (0.5,2.5)
+betaNode      "-b1 "     r   (1.0,2.5)
+rhoCar       "-r2 "     r   (0.05,0.2)
+alphaCar     "-a2 "     r   (0.5,2.5)
+betaCar      "-b2 "     r   (1.0,2.5)
+numberAnts "-na " i (400,1000)
+pheroNodeRatio "-pnr " r,log (0.0001,0.001)
+pheroCarRatio "-pcr " r,log (0.0002,0.002)
+nFavorits "-nfav " i (50,100)
+stall "-st " i (300,500)
+

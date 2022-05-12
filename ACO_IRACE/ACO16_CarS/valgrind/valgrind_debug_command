@@ -1,0 +1,8 @@
+valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=./valgrind/valgrind-debug-out.txt \
+         ./bin/Debug/ACO16 -d inputData/BrasilRN16n.car -r1 0.18 -r2 0.18 -a1 3.5 -b1 1.6 -a2 1.6 -b2 2.4 -na 100 -ni 100 -nexec 2 -sn 0 --opt
+
+

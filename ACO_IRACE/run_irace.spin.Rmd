@@ -1,0 +1,19 @@
+
+```{r }
+library("irace")
+
+parametri <- readParameters("parameters.txt")
+scenarij <- readScenario("scenario.txt")
+irace(scenario = scenarij, parameters=parametri)
+
+testing.main(logFile="irace.Rdata")
+```
+
+
+
+---
+title: run_irace.R
+author: epc
+date: '2021-08-22'
+
+---
