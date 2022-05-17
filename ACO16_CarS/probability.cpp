@@ -203,13 +203,13 @@ int PickCar(ant *currentAnt, node *currentNode, car *currentCar)
 void calculateMaxMin()
 {
     float price = 0.0;
-    if(bPath.haveOpt && bPath.optPrice > 0.0)
+    if(bPath.haveOpt && bPath.pheroResetOptPrice > 0.0)
     {
-        price = bPath.optPrice;
+        price = bPath.pheroResetOptPrice;
     }
-    else if(bPath.price > 0.0)
+    else if(bPath.pheroResetPrice > 0.0)
     {
-        price = bPath.price;
+        price = bPath.pheroResetPrice;
     }
     else
         return; //prices are zero so no phero calculation (starting)
@@ -225,5 +225,11 @@ void calculateMaxMin()
     //cars
     pheroMax2 = 1.0/(parData.rho2*price);
     pheroMin2 = parData.minRatioCars * pheroMax2;
+
+    bPath.pheroMin1 = pheroMin1;
+    bPath.pheroMax1 = pheroMax1;
+
+    bPath.pheroMin2 = pheroMin2;
+    bPath.pheroMax2 = pheroMax2;
 
 }
