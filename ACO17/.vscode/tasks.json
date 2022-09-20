@@ -1,0 +1,81 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "label": "CodeBlock style debug",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/compile/compile_debug_g++.sh"
+            ],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+			"detail": "compiler: /usr/bin/g++"
+        },
+		{
+            "label": "CodeBlock style release",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "${workspaceFolder}/compile/compile_release_g++.sh"
+            ],
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+			"detail": "compiler: /usr/bin/g++"
+        },
+		{
+			"type":"shell",
+			"label": "run debug build",
+			"command": "./compile/compile_debug_clang.sh",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/clang++"
+		},
+		{
+			"type":"shell",
+			"label": "run release build",
+			"command": "./compile/compile_release_clang.sh",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/clang++"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++ build active file",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/clang++"
+		},
+	]
+}
