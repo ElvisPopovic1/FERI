@@ -176,6 +176,7 @@ bool updatePheromones(ant *bestAnt)
         ptAntNode->curNode->pheroNeighbours[ptAntNode->nextNode->index]+=pheroUpdate;
         ptAntNode->curNode->pheroCars[ptAntNode->carOut->index]+=pheroUpdate;
     }
+    
     return true;
 }
 
@@ -325,12 +326,6 @@ bool updateBestPathSincePheroReset(ant *bestAnt)
         bPath.pheroResetPrice = bestAnt->priceNoPassengers;
         bPath.pheroResetOptPrice = bestAnt->bestOptPrice;
         bPath.pheroResetPassPrice = bestAnt->passPrice;
-
-        bPath.pheroMin1 = pheroMin1;
-        bPath.pheroMax1 = pheroMax1;
-
-        bPath.pheroMin2 = pheroMin2;
-        bPath.pheroMax2 = pheroMax2;
     }
     return updateBestPath;
 }

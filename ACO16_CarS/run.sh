@@ -5,4 +5,4 @@
 #./bin/Release/ACO16 -d inputData/Londrina100n.car -r1 0.05 -r2 0.1 -a1 1.05 -b1 2.0 -a2 1.05 -b2 2.0 -na 500 -ni 10000 -sn 0 -pnr 0.00002 -pcr 0.0005 -nexec 11 -nfav 100 -st 300 --write 
 
 # no write
-./bin/Release/ACO16 -d inputData/BrasilRJ14n.car -r1 0.08 -r2 0.08 -a1 2.5 -b1 2.5 -a2 2.5 -b2 2.5 -na 2600 -ni 1000 -sn 0 -pnr 0.02 -pcr 0.05 -nexec 51 -nfav -1 -st 20 --write 
+./bin/Release/ACO16 -d inputData/BrasilNE50n.car -r1 0.05 -r2 0.12 -a1 0.7 -b1 2.5 -a2 0.7 -b2 2.0 -na 800 -ni 6000 -sn 0 -pnr 0.0001 -pcr 0.0004 -nexec 51 -nfav -1 -st 100 --write

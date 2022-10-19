@@ -15,10 +15,10 @@ testInstancesDir = "instances/testing/"
 testNumElites = 10
 
 ## eksperimentalni budget (koliko izvrsavanja)
-maxExperiments = 5000
+maxExperiments = 8000
 
 ## broj jezgri procesora
-parallel = 24
+parallel = 8
 
 ## debug level - verbosing
 # debugLevel = 0
@@ -42,7 +42,7 @@ targetRunner = function (experiment, scenario) {
   instance_name = experiment$instance
   
   # nepromjenjivi parametri npr. -opt, -pass, -write itd.
-  fixed_params = "-ni 1200 -sn 0 -nexec 1 " 
+  fixed_params = "-ni 6000 -sn 0 -nexec 1 -nfav -1 " 
   
   # stvara parametre za komandnu liniju
   parameters    = buildCommandLine(experiment$configuration, experiment$switches)

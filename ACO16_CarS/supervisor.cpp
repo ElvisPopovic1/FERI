@@ -347,8 +347,8 @@ void writeBestData(uint iteration, chrono::duration<double> cur_time, uint start
     (bPath.haveOpt?bPath.optPrice:-1) << " " <<
     (bPath.havePass?bPath.passPrice:-1) << " " <<
     bPath.nPickedPassengers << " " <<
-    bPath.pheroMin1 << " " << bPath.pheroMax1 << " " << (bPath.pheroMin1/bPath.pheroMax1) << " " <<
-    bPath.pheroMin2 << " " << bPath.pheroMax2 << " " << (bPath.pheroMin2/bPath.pheroMax2) << " " <<
+    pheroMin1 << " " << pheroMax1 << " " << (pheroMin1/pheroMax1) << " " <<
+    pheroMin2 << " " << pheroMax2 << " " << (pheroMin2/pheroMax2) << " " <<
     (solutionStall?" *":"") << endl;
 }
 
