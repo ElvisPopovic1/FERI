@@ -1,0 +1,71 @@
+
+## default, koriste se parametri zbog imena
+parameterFile = "parameters.txt"
+configurationsFile = "default.txt"
+forbiddenFile = "forbidden.txt"
+
+## radni direktorij
+execDir = "."
+
+## podaci za podesavanje
+trainInstancesDir = "instances/tuning/"
+
+## podaci za testiranje
+testInstancesDir = "instances/testing/"
+testNumElites = 5
+
+## eksperimentalni budget (koliko izvrsavanja)
+maxExperiments = 1000
+
+## broj jezgri procesora
+parallel = 4
+
+## debug level - verbosing
+# debugLevel = 0
+
+## target runner - pokretac programa, moze biti skripta ili R funkcija
+#targetRunner = "./target-runner"
+
+## R skripta za target runner
+targetRunner = function (experiment, scenario) {
+  suppressMessages(require("stringr"))
+
+  # zakomentirati - zaobilazi algoritam i stvara random podatke za testiranje
+  # return(list(cost=runif(n=1, min=100, max=2000)))
+
+  exe = "ACO17_CarS/bin/release/ACO17"
+  
+  # izdvaja vrijednosti iz experiment strukture  
+  candidate_id  = experiment$id.configuration
+  instance_id   = experiment$id.instance
+  seed          = experiment$seed 
+  instance_name = experiment$instance
+  
+  # nepromjenjivi parametri npr. -opt, -pass, -write itd.
+  fixed_params = "-ni 10000 -sn 0 -nexec 1 -nfav -1 -alt old " 
+  
+  # stvara parametre za komandnu liniju
+  parameters    = buildCommandLine(experiment$configuration, experiment$switches)
+  
+  # kreira komandnu liniju i koristi razmak kao separator
+  command_line = paste (fixed_params, "-p", instance_name,"-rs", seed, "-nt", parameters, sep=" ")
+  
+  # pokrece algoritam
+  output = system2(command=exe, args=command_line, stdout=TRUE, stderr=TRUE)
+  
+  # provjera ispravnosti zavrsetka programa
+  if (!is.null(attr(output, "status"))) {
+    cat ("\nError executing: ", exe, command_line, "\n")
+    cat (output, "\n\n")
+    stop()
+  }
+
+  
+  # parsiranje ispisanog, prvo se pretrazi mjesto za "Final best price: " koju ispisuje algoritam
+  sel = which(sapply(output, grep, pattern="Final best price:", ignore.case = FALSE, value=FALSE) == 1)
+  result=as.numeric(str_split(str_trim(str_split(output[sel],",")[[1]][1]),"\\s")[[1]][4])
+  return(list(cost=result))
+}
+
+## END of scenario file
+############################################################################

@@ -1,0 +1,23 @@
+Process:         ACO17 [52352]
+Path:            /Volumes/VOLUME/*/ACO17
+Load Address:    0x100efc000
+Identifier:      ACO17
+Version:         ???
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [52351]
+
+Date/Time:       2022-10-09 19:26:51.600 +0200
+Launch Time:     2022-10-09 19:26:51.348 +0200
+OS Version:      macOS 12.6 (21G115)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         38.5M
+Physical footprint (peak):  38.5M
+----
+
+leaks Report Version: 4.0
+Process 52352: 1 nodes malloced for 0 KB
+Process 52352: 0 leaks for 0 total leaked bytes.
+

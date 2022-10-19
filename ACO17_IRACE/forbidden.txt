@@ -1,0 +1,2 @@
+# jedna zabrana po retku uz logicke operatore
+

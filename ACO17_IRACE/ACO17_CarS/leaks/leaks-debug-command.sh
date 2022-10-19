@@ -1,0 +1,1 @@
+leaks --atExit -- ./bin/debug/ACO17 -ca 1.5 -cb 1.1 -na 1.6 -nb 1.2 -rs 1 -nf 8 -nt  > ./leaks/leaks-debug-out.txt

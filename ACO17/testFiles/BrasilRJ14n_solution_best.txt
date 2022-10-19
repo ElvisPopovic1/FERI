@@ -1,0 +1,9 @@
+NAME : BrasilRJ14n
+ITERATION : 45
+COST : 167.0
+NODES
+  0 12 1 13 10 11 2 6 4 5 3 8 7 9 
+CARS
+  1 1 1 1 1 1 0 0 0 0 0 0 0 0 
+EOF
+
